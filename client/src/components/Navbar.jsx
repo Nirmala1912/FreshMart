@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 
@@ -9,20 +10,26 @@ function Navbar() {
       </h1>
 
       <div className="flex items-center gap-6">
-        <a href="#">Home</a>
-        <a href="#">Categories</a>
+        <Link to="/">Home</Link>
+
+        <Link to="/products">Products</Link>
 
         <div className="flex items-center bg-white rounded-md px-2">
           <input
             type="text"
-            placeholder="Search vegetables..."
+            placeholder="Search..."
             className="outline-none text-black px-2 py-1"
           />
           <IoSearch className="text-black" />
         </div>
 
-        <FaShoppingCart size={22} />
-        <FaUser size={22} />
+        <Link to="/cart">
+          <FaShoppingCart size={22} />
+        </Link>
+
+        <Link to="/login">
+          <FaUser size={22} />
+        </Link>
       </div>
     </nav>
   );
